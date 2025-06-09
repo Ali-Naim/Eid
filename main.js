@@ -1,6 +1,41 @@
-import { questions } from './questions.js';
+import { questions } from './data.js';
 
-const cards = document.querySelectorAll('.card');
+
+
+
+const cardGrid = document.getElementById('cardGrid');
+
+// Generate cards dynamically based on questions array
+questions.forEach((q, index) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `السؤال ${index + 1}`);
+    card.setAttribute('data-index', index);
+
+    card.innerHTML = `
+        <div class="card-number">${index + 1}</div>
+        <div class="card-category">${q.category}</div>
+    `;
+
+    // Add click and keyboard event listeners
+    card.addEventListener('click', () => openModal(index));
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(index);
+        }
+    });
+
+    cardGrid.appendChild(card);
+});
+
+
+
+
+
+
 const modalOverlay = document.querySelector('.modal-overlay');
 const modalQuestion = document.getElementById('modal-question');
 const modalAnswer = document.getElementById('modal-answer');
@@ -38,11 +73,6 @@ function openModal(index) {
 // Close modal
 function closeModal() {
     modalOverlay.classList.remove('active');
-    if (currentIndex !== null) {
-        cards[currentIndex].focus();
-    } else {
-        randomBtn.focus();
-    }
     currentIndex = null;
 }
 
@@ -68,18 +98,6 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-// Card click handlers
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        openModal(parseInt(card.dataset.index));
-    });
-    card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openModal(parseInt(card.dataset.index));
-        }
-    });
-});
 
 // Random button picks a random question
 randomBtn.addEventListener('click', () => {

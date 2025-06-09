@@ -234,6 +234,78 @@ h1::after {
     animation-delay: 1.8s;
 }
 
+.card:nth-child(19) {
+    animation-delay: 1.9s;
+}
+
+.card:nth-child(20) {
+    animation-delay: 2.0s;
+}
+
+.card:nth-child(21) {
+    animation-delay: 2.1s;
+}
+
+.card:nth-child(22) {
+    animation-delay: 2.2s;
+}
+
+.card:nth-child(23) {
+    animation-delay: 2.3s;
+}
+
+.card:nth-child(24) {
+    animation-delay: 2.4s;
+}
+
+.card:nth-child(25) {
+    animation-delay: 2.5s;
+}
+
+.card:nth-child(26) {
+    animation-delay: 2.6s;
+}
+
+.card:nth-child(27) {
+    animation-delay: 2.7s;
+}
+
+.card:nth-child(28) {
+    animation-delay: 2.8s;
+}
+
+.card:nth-child(29) {
+    animation-delay: 2.9s;
+}
+
+.card:nth-child(30) {
+    animation-delay: 3.0s;
+}
+
+.card:nth-child(31) {
+    animation-delay: 3.1s;
+}
+
+.card:nth-child(32) {
+    animation-delay: 3.2s;
+}
+
+.card:nth-child(33) {
+    animation-delay: 3.3s;
+}
+
+.card:nth-child(34) {
+    animation-delay: 3.4s;
+}
+
+.card:nth-child(35) {
+    animation-delay: 3.5s;
+}
+
+.card:nth-child(36) {
+    animation-delay: 3.6s;
+}
+
 @keyframes cardEntrance {
     from {
         opacity: 0;

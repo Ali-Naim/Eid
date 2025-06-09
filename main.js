@@ -45,15 +45,6 @@ const closeBtn = document.querySelector('.close-btn');
 const questionCategory = document.getElementById('question-category');
 let currentIndex = null;
 
-// Initialize category counters
-document.getElementById('quranCount').textContent =
-    `${questions.filter(q => q.category === "القرآن").length} أسئلة قرآنية`;
-document.getElementById('hadithCount').textContent =
-    `${questions.filter(q => q.category === "الحديث").length} أسئلة حديثية`;
-document.getElementById('sirahCount').textContent =
-    `${questions.filter(q => q.category === "السيرة").length} أسئلة سيرية`;
-document.getElementById('fadaelCount').textContent =
-    `${questions.filter(q => q.category === "الفضائل").length} أسئلة فضائل`;
 
 // Open modal with selected question
 function openModal(index) {
